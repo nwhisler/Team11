@@ -54,7 +54,7 @@
                         let colors = $colors;
                         let table = '<table>';
                         for(let idx = 0; idx < $colors; idx++) {
-                            table += '<tr><td>Column</td><td>Column</td></tr>';    
+                            table += '<tr><td></td><td></td></tr>';    
                         }
                         table+= '</table>';
                         document.getElementById('table-container').innerHTML = table;
