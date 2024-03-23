@@ -5,10 +5,10 @@
         include("content/home.php");
     ?>
     <style type="text/css">
-    <?php
-        $css = file_get_contents("css/style.css");
-        echo $css;
-    ?>
+        <?php
+            $css = file_get_contents("css/style.css");
+            echo $css;
+        ?>
     </style>
 
     </body>
