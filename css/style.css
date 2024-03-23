@@ -29,3 +29,22 @@ table, tr, td{
     border: 1px solid;
 
 }
+
+#table {
+
+    width: 100%;
+    height: 250px;
+
+}
+
+#leftColumn {
+
+    width: 20%;
+
+}
+
+#rightColumn {
+
+    width: 80%;
+
+}

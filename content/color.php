@@ -52,9 +52,9 @@
                     <script> 
                         let dimensions = $dimensions;
                         let colors = $colors;
-                        let table = '<table>';
+                        let table = '<table id=table>';
                         for(let idx = 0; idx < $colors; idx++) {
-                            table += '<tr><td></td><td></td></tr>';    
+                            table += '<tr><td id=leftColumn></td><td id=rightColumn></td></tr>';    
                         }
                         table+= '</table>';
                         document.getElementById('table-container').innerHTML = table;
