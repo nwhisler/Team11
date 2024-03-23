@@ -52,15 +52,9 @@
                     <script> 
                         let dimensions = $dimensions;
                         let colors = $colors;
-                        if(dimensions < 1 || dimensions > 26) {
-                            window.alert('Incorrect dimensions. Choose between 1 and 26.');
-                        }
-                        if(colors < 1 || colors > 10) {
-                            window.alert('Incorrect colors. Choose between 1 and 10.');
-                        }
                         let table = '<table>';
                         for(let idx = 0; idx < $colors; idx++) {
-                            table += '<tr><td>Column</td><td>Column</td></tr>';    
+                            table += '<tr><td></td><td></td></tr>';    
                         }
                         table+= '</table>';
                         document.getElementById('table-container').innerHTML = table;
