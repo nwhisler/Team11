@@ -63,6 +63,28 @@
             }
 
         }
+
+        else {
+
+            echo "<head>
+                    <meta charset='UTF-8'>
+                    <title>Color Coordinate Generation</title>
+                    <div class='content'>
+                        <nav>
+                            <li id='navbar'><a href='../index.php'>Home</a></li>
+                            <li id='navbar'><a href='about.php'>About</a></li>
+                            <li id='navbar'><a href='color.php'>Color Coordinate Generation</a></li>
+                        </nav>
+                    </div>
+                  </head>
+                  <body>
+                    <p> Use parameters dimensions with a value between 1-26 and colors with a value between 1-10. </p>
+                  </body>
+                  <footer>
+                    Copyright &#169 Team 11
+                  </footer>";
+
+        }
     ?>
     <style type="text/css">
         <?php
