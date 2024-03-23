@@ -17,3 +17,15 @@ a:hover {
     color: green;
 
 }
+
+content {
+
+    padding: 10px;
+
+}
+
+table, tr, td{
+
+    border: 1px solid;
+
+}
