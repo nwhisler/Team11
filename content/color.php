@@ -44,6 +44,8 @@
                     </head>
                     <body>
                         <div id='table-container'></div>
+                        <br>
+                        <div id='table-container1'></div>
                     </body>
                     <footer>
                         Copyright &#169 Team 11
@@ -52,12 +54,71 @@
                     <script> 
                         let dimensions = $dimensions;
                         let colors = $colors;
+                        const colorOptions = ['red', 'orange', 'yellow', 'green', 'blue', 'purple', 'grey', 'brown', 'black', 'teal'];
+                        const options = ['Red', 'Orange', 'Yellow', 'Green', 'Blue', 'Purple', 'Grey', 'Brown', 'Black', 'Teal'];
                         let table = '<table id=table>';
+                        let counter = 0;
                         for(let idx = 0; idx < $colors; idx++) {
-                            table += '<tr><td id=leftColumn></td><td id=rightColumn></td></tr>';    
+                            table += '<tr><td id=leftColumn>';
+                            table += '<select id=options';
+                            table += counter.toString();
+                            table += '>Select Color';
+                            for(let index = 0; index < options.length; index++) {
+                                if(index == counter) {                                
+                                    table += '<option value=';
+                                    table += colorOptions[index];
+                                    table += ' selected>';
+                                    table += options[index];
+                                    table += '</option>';
+                                }
+                                else {
+                                    table += '<option value=';
+                                    table += colorOptions[index];
+                                    table += '>';
+                                    table += options[index];
+                                    table += '</option>';
+                                }
+                            }
+                            counter++;
+                            table +=  '</td><td id=rightColumn></td></tr>';
                         }
                         table+= '</table>';
                         document.getElementById('table-container').innerHTML = table;
+
+                        let alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
+                        let table1 = '<table id=table1><tr><th></th>';
+
+
+                        for(let idx = 0; idx < dimensions + 1; idx++) {
+
+                                table1 += '<th>';
+                                table1 += alphabet[idx];
+                                table1 += '</th>';
+
+                        }
+
+                        table += '</tr>';
+
+                        for(let idx = 0; idx < dimensions + 1; idx++) {
+
+                            let rowNumber = idx + 1;
+                            table1 += '<tr><td>';
+                            table1 += rowNumber.toString();
+                            table1 += '<td>';
+
+                            for(let index = 0; index < dimensions; index++) {
+
+                                table1 += '<td></td>';
+
+                            }
+
+                            table1 += '</tr>';
+
+                        }
+                            
+                        table1+= '</table>';
+                        document.getElementById('table-container1').innerHTML = table1;
+
                     </script>";
 
             }
