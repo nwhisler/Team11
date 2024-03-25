@@ -22,10 +22,14 @@
                         </p>
                     </div>
                     <div>
-                    <!--<img src='' alt='img' />-->
-                    <!--<p>-->
-                            
-                    <!--</p>-->
+                        <img src='https://github.com/EthanSmithCS.png' alt='img' />
+                        <p>
+                            My name is Ethan Smith and I am a senior undergraduate student persuing Computer Science. 
+                            In computer science, I am extremely interested in distributed systems and how they work, this class
+                            is my first introduction to web dev and I have really enjoyed it! Outside of school I love to cook, sew,
+                            and spend time outdoors. I am looking forward to finishing out Spring 2024 strong with my graduation just around the corner
+                            next Fall!
+                        </p>
                     </div>
                     <div>
                     <!--<img src='' alt='img' />-->
