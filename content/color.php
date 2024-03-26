@@ -35,7 +35,7 @@
                 echo "<head>
                         <meta charset='UTF-8'>
                         <title>Color Coordinate Generation</title>
-                        <div class='content'>
+                        <div id='content'>
                             <nav>
                                 <li id='navbar'><a href='../index.php'>Home</a></li>
                                 <li id='navbar'><a href='about.php'>About</a></li>
@@ -46,6 +46,7 @@
                         <div id='table-container'></div>
                         <br>
                         <div id='table-container1'></div>
+                        <input type='button' value='Print' onClick='printContent($colors, $dimensions)'>
                     </body>
                     <footer>
                         Copyright &#169 Team 11
@@ -118,6 +119,68 @@
                             
                         table1+= '</table>';
                         document.getElementById('table-container1').innerHTML = table1;
+                        function printContent(colors, dimensions) {
+
+                            let alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
+                            newWin = window.open(\"\");
+                            newWin.document.write('<table id=printTable style=\"border: 1px solid;width: 100%;height: 250px;\">');
+
+                            for(let idx = 0; idx < colors; idx++) {
+
+                                var sel = document.getElementById(\"options\" + idx.toString());
+                                var text= sel.options[sel.selectedIndex].text;
+
+                                newWin.document.write('<tr style=\"border: 1px solid;\">');
+                                newWin.document.write('<td style=\"border: 1px solid; width: 20%;\">');
+                                newWin.document.write(text);
+                                newWin.document.write('</td><td style=\"border: 1px solid; width: 80%;\"></td></tr>');
+
+
+                            }
+
+                            newWin.document.write('</table>');
+                            newWin.document.write('<br>');
+                            newWin.document.write('<table style=\"border: 1px solid;width: 100%;height: 350px\">');
+                            newWin.document.write('<tr style=\"border: 1px solid;\">');
+                            newWin.document.write('<th style=\"border: 1px solid;\"></th>');
+
+
+                            for(let idx = 0; idx < dimensions + 1; idx++) {
+
+                                newWin.document.write('<th style=\"border: 1px solid;\">');
+                                newWin.document.write(alphabet[idx]);
+                                newWin.document.write('</th>');
+
+                            }
+
+                            newWin.document.write('</tr>');
+
+                            for(let idx = 0; idx < dimensions + 1; idx++) {
+
+                                let rowNumber = idx + 1;
+                                newWin.document.write('<tr style=\"border: 1px solid;\">');
+                                newWin.document.write('<td style=\"border: 1px solid;\">');
+                                newWin.document.write(rowNumber.toString());
+                                newWin.document.write('</td>');
+    
+                                for(let index = 0; index < dimensions + 1; index++) {
+    
+                                    newWin.document.write('<td style=\"border: 1px solid;\"></td>');
+    
+                                }
+    
+                                newWin.document.write('</tr>');
+    
+                            }
+                           
+                            newWin.document.write('</table>');
+                            newWin.document.write('<br>');
+                            newWin.document.write('<footer>Copyright &#169 Team 11</footer>');
+
+                            newWin.print();
+                            newWin.close();
+
+                        }
 
                     </script>";
 
