@@ -37,6 +37,9 @@ a:hover {
     max-width: 800px;
 }
 
+.bio {
+    padding: 10px;
+}
 
 .bio img {
     width: 300px;
@@ -47,8 +50,6 @@ a:hover {
 
 
 .bio p {
-    padding-left: 5px;
-    padding-right: 5px;
     font-size: 16px;
 }
 
