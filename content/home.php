@@ -12,9 +12,7 @@
         </nav>
     </head>
     <body>
-        <p>
-            Homepage of the first Milestone.
-        </p>
+        <h1>Homepage of the first Milestone.</h1>
         <div>
                 <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris diam purus, dignissim et ipsum id, venenatis egestas est. Nunc odio massa,
