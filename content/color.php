@@ -45,6 +45,7 @@
                     <body>
                         <div id='table-container'></div>
                         <br>
+                        <div id='duplicates'></div>
                         <div id='table-container1'></div>
                         <input type='button' value='Print' onClick='printContent($colors, $dimensions)'>
                     </body>
@@ -63,7 +64,7 @@
                             table += '<tr><td id=leftColumn>';
                             table += '<select id=options';
                             table += counter.toString();
-                            table += '>Select Color';
+                            table += ' onChange=handleOnChange($colors)>Select Color';
                             for(let index = 0; index < options.length; index++) {
                                 if(index == counter) {                                
                                     table += '<option value=';
@@ -179,6 +180,52 @@
 
                             newWin.print();
                             newWin.close();
+
+                        }
+
+                        function handleOnChange(colors) {
+
+                            let counter = 0;
+                            let duplicates = false;
+                           
+                            for(let idx = 1; idx < colors; idx++) {
+
+                                var sel = document.getElementById(\"options\" + counter.toString());
+                                var text= sel.options[sel.selectedIndex].text;
+
+                                for(let index = 0; index < colors; index++) {
+
+                                    if(index != counter) {
+
+                                        var sel1 = document.getElementById(\"options\" + index.toString());
+                                        var text1= sel1.options[sel1.selectedIndex].text;
+
+                                        if(text == text1) {
+
+                                            duplicates = true;
+                                            break;
+            
+                                        }
+
+                                    }
+        
+                                }
+
+                                if(duplicates) {
+
+                                    document.getElementById('duplicates').innerHTML = '<p> All values must be different </p>';
+                                    break;
+
+                                }
+
+                                counter++;
+                                
+                            }
+                                
+                            if(!duplicates) {
+    
+                                document.getElementById('duplicates').innerHTML = '<p></p>';
+                            }
 
                         }
 
