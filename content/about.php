@@ -33,7 +33,7 @@
                             </p>
                         </div>
                         <div class='bio'>
-                        <!--<img src='https://github.com/nwhisler/Team11/assets/111817710/f2318185-25a7-44d5-ac28-f25bdb9c662f' alt='img' />-->
+                        <img src='https://github.com/nwhisler/Team11/assets/111817710/f2318185-25a7-44d5-ac28-f25bdb9c662f' alt='img' />
                             <p>
                                 My name is Stephen Klugherz. I am a senior undergraduate student studying Computer Science.
                                 I am in my last semester and hope to graduate May 2024. I am interested in software development and videogame development.

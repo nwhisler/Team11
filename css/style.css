@@ -9,6 +9,12 @@ body {
     background-color: #d0d3d4;
 }
 
+footer {
+    background-color: #003b49;
+    color: #d6d2c4;
+    padding: 10px;
+}
+
 nav {
     background-color: #003b49;
     padding: 10px;
