@@ -91,7 +91,7 @@
                         let table1 = '<table id=table1><tr><th></th>';
 
 
-                        for(let idx = 0; idx < dimensions + 1; idx++) {
+                        for(let idx = 0; idx < dimensions; idx++) {
 
                                 table1 += '<th>';
                                 table1 += alphabet[idx];
@@ -101,16 +101,18 @@
 
                         table += '</tr>';
 
-                        for(let idx = 0; idx < dimensions + 1; idx++) {
+                        for(let idx = 0; idx < dimensions; idx++) {
 
                             let rowNumber = idx + 1;
                             table1 += '<tr><td>';
                             table1 += rowNumber.toString();
                             table1 += '<td>';
 
-                            for(let index = 0; index < dimensions; index++) {
+                            for(let index = 0; index < dimensions -1; index++) {
 
-                                table1 += '<td></td>';
+                                table1 += '<td>';
+                                table1 += '<div class=\'cell_content\'></div>';
+                                table1 += '</td>';
 
                             }
 
@@ -146,7 +148,7 @@
                             newWin.document.write('<th style=\"border: 1px solid;\"></th>');
 
 
-                            for(let idx = 0; idx < dimensions + 1; idx++) {
+                            for(let idx = 0; idx < dimensions; idx++) {
 
                                 newWin.document.write('<th style=\"border: 1px solid;\">');
                                 newWin.document.write(alphabet[idx]);
@@ -156,7 +158,7 @@
 
                             newWin.document.write('</tr>');
 
-                            for(let idx = 0; idx < dimensions + 1; idx++) {
+                            for(let idx = 0; idx < dimensions; idx++) {
 
                                 let rowNumber = idx + 1;
                                 newWin.document.write('<tr style=\"border: 1px solid;\">');
@@ -164,9 +166,9 @@
                                 newWin.document.write(rowNumber.toString());
                                 newWin.document.write('</td>');
     
-                                for(let index = 0; index < dimensions + 1; index++) {
+                                for(let index = 0; index < dimensions; index++) {
     
-                                    newWin.document.write('<td style=\"border: 1px solid;\"></td>');
+                                    newWin.document.write('<td style=\"border: 1px solid;\"><div class=\'cell_content\'></div></td>');
     
                                 }
     
