@@ -180,9 +180,6 @@
                             newWin.document.write('<br>');
                             newWin.document.write('<footer>Copyright &#169 Team 11</footer>');
 
-                            newWin.print();
-                            newWin.close();
-
                         }
 
                         function handleOnChange(colors) {
