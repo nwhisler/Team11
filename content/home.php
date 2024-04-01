@@ -12,6 +12,10 @@
         </nav>
     </head>
     <body>
+        <div align="center" id="companyImage">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXWeT--Now_Mkvk4cfi1tcl9A4Hgzm-JEdZg&usqp=CAU" alt=image />
+             <p> Team 11 </p>
+        </div>
         <h1>Homepage of the first Milestone.</h1>
         <div>
                 <p>
@@ -24,7 +28,7 @@
                 </p>
         </div>
     </body>
-    <footer>
+    <footer id="homeFooter">
         Copyright &#169 Team 11
     </footer>
     </div>
