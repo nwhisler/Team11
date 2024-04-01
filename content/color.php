@@ -108,7 +108,7 @@
                             table1 += rowNumber.toString();
                             table1 += '<td>';
 
-                            for(let index = 0; index < dimensions -1; index++) {
+                            for(let index = 0; index < dimensions - 1; index++) {
 
                                 table1 += '<td>';
                                 table1 += '<div class=\'cell_content\'></div>';
@@ -126,6 +126,12 @@
 
                             let alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
                             newWin = window.open(\"\");
+                            newWin.document.write('<div align=\"center\">');
+                            newWin.document.write('<header>');
+                            newWin.document.write('<img src=\"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXWeT--Now_Mkvk4cfi1tcl9A4Hgzm-JEdZg&usqp=CAU\" alt=image />');
+                            newWin.document.write('<p> Team 11 </p>');
+                            newWin.document.write('</header>');
+                            newWin.document.write('</div>');
                             newWin.document.write('<table id=printTable style=\"border: 1px solid;width: 100%;height: 250px;\">');
 
                             for(let idx = 0; idx < colors; idx++) {
@@ -168,7 +174,7 @@
     
                                 for(let index = 0; index < dimensions; index++) {
     
-                                    newWin.document.write('<td style=\"border: 1px solid;\"><div class=\'cell_content\'></div></td>');
+                                    newWin.document.write('<td style=\"border: 1px solid;\"><div style=\"aspect-ratio: 1/1;\"></div></td>');
     
                                 }
     
@@ -250,7 +256,7 @@
                   <body>
                     <p> Use parameters dimensions with a value between 1-26 and colors with a value between 1-10. </p>
                   </body>
-                  <footer>
+                  <footer id=\"colorFooter\">
                     Copyright &#169 Team 11
                   </footer>";
 

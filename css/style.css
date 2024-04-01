@@ -96,6 +96,24 @@ table, tr, td, th{
     aspect-ratio: 1/1;
 }
 
+#homeFooter {
+
+    margin-top:225px;
+
+}
+
+#colorFooter {
+
+    margin-top:575px; 
+
+}
+
+#companyImage {
+
+    margin-top: 10px;
+
+}
+
 #leftColumn {
 
     width: 20%;
