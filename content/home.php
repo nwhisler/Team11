@@ -14,17 +14,14 @@
     <body>
         <div align="center" id="companyImage">
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXWeT--Now_Mkvk4cfi1tcl9A4Hgzm-JEdZg&usqp=CAU" alt=image />
-             <p> Team 11 </p>
         </div>
-        <h1>Homepage of the first Milestone.</h1>
+        <h1>Team 11</h1>
         <div>
                 <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris diam purus, dignissim et ipsum id, venenatis egestas est. Nunc odio massa,
-                consequat eget mauris ut, gravida facilisis justo. Maecenas bibendum scelerisque leo et laoreet. Vestibulum ante ipsum primis in faucibus
-                orci luctus et ultrices posuere cubilia curae; Donec sed nisl viverra, semper diam non, varius risus. Donec velit sem, aliquam non interdum
-                id, ornare sed purus. In porttitor ex vel nisi facilisis pulvinar. Phasellus eu turpis at tortor euismod efficitur. Ut purus est, scelerisque at
-                lacus vel, ultricies auctor nibh. Vestibulum sagittis, nunc a maximus rhoncus, tortor est accumsan mi, sed pulvinar dui ligula vel nisl.
-                Vestibulum tincidunt vehicula nulla a sodales.
+                Welcome to Team 11, your go-to destination for all things color-related! We're thrilled to have you here. 
+                If you're curious about the brilliant minds behind our work, head over to our About page where you'll find information about our talented contributors (team members). 
+                And when it comes to fulfilling your color needs, look no further than our Color Coordinate Generation page. 
+                Whether you're seeking inspiration or specific color schemes, we've got you covered. Explore, create, and unleash your creativity with Team 11!
                 </p>
         </div>
     </body>
