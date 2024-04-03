@@ -106,9 +106,9 @@
                             let rowNumber = idx + 1;
                             table1 += '<tr><td>';
                             table1 += rowNumber.toString();
-                            table1 += '<td>';
+                            table1 += '</td>';
 
-                            for(let index = 0; index < dimensions - 1; index++) {
+                            for(let index = 0; index < dimensions; index++) {
 
                                 table1 += '<td>';
                                 table1 += '<div class=\'cell_content\'></div>';
