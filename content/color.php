@@ -149,7 +149,7 @@
 
                             newWin.document.write('</table>');
                             newWin.document.write('<br>');
-                            newWin.document.write('<table style=\"border: 1px solid;width: 100%;height: 350px\">');
+                            newWin.document.write('<table style=\"border: 1px solid;width: 100%;height: 350px; table-layout: fixed;\">');
                             newWin.document.write('<tr style=\"border: 1px solid;\">');
                             newWin.document.write('<th style=\"border: 1px solid;\"></th>');
 
