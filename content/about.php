@@ -42,9 +42,11 @@
                         </div>
                         <div class='bio'>
                         <!--<img src='' alt='img' />-->
-                        <!--<p>-->
-                                
-                        <!--</p>-->
+                        <p>
+                           My name is Victor Mendoza and I am a junior undergraduate student enrolled in the Computer Science fully online program. I worked in oil and gas for 8 years before
+                           I started persuing this degree. I currently work for a startup SaaS company working with drone imagery and writing some code when I have time. This class has really
+                           understand more when I am working on the code at work. I like fishing and hanging out with my wife and son on my free time.    
+                        </p>
                         </div>
                     </div>
                 </body>

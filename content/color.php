@@ -60,10 +60,12 @@
                         const options = ['Red', 'Orange', 'Yellow', 'Green', 'Blue', 'Purple', 'Grey', 'Brown', 'Black', 'Teal'];
                         let table = '<table id=table>';
                         let counter = 0;
+                        const previousVals = [];
                         for(let idx = 0; idx < $colors; idx++) {
                             table += '<tr><td id=leftColumn>';
                             table += '<select id=options';
                             table += counter.toString();
+                            table += ' data-counter=' + idx;
                             table += ' onChange=handleOnChange($colors)>Select Color';
                             for(let index = 0; index < options.length; index++) {
                                 if(index == counter) {                                
@@ -81,9 +83,10 @@
                                     table += '</option>';
                                 }
                             }
+                            previousVals[idx] = colorOptions[idx];
                             counter++;
                             table +=  '</td><td id=rightColumn></td></tr>';
-                        }
+                        }console.log(previousVals);
                         table+= '</table>';
                         document.getElementById('table-container').innerHTML = table;
 
@@ -192,6 +195,7 @@
 
                             let counter = 0;
                             let duplicates = false;
+                            eventCounter = parseInt(event.target.getAttribute('data-counter'), 10);
                            
                             for(let idx = 1; idx < colors; idx++) {
 
@@ -219,6 +223,7 @@
                                 if(duplicates) {
 
                                     document.getElementById('duplicates').innerHTML = '<p> All values must be different </p>';
+                                    event.target.value = previousVals[eventCounter];
                                     break;
 
                                 }
@@ -230,9 +235,10 @@
                             if(!duplicates) {
     
                                 document.getElementById('duplicates').innerHTML = '<p></p>';
+                                previousVals[eventCounter] = event.target.value;
                             }
 
-                        }
+                        } 
 
                     </script>";
 
