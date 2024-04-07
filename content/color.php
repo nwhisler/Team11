@@ -223,6 +223,7 @@
                                 if(duplicates) {
 
                                     document.getElementById('duplicates').innerHTML = '<p> All values must be different </p>';
+                                    setTimeout(function(){document.getElementById('duplicates').innerHTML = '<p></p>';}, 4000);
                                     event.target.value = previousVals[eventCounter];
                                     break;
 
