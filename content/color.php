@@ -85,6 +85,13 @@
                             }
                             previousVals[idx] = colorOptions[idx];
                             counter++;
+                            table += '<input type=\"radio\" id=\"radio\"';
+                            table +=  idx.toString();
+                            table += ' value = colorOptions[idx]';
+                            table += '>';
+                            table += '<label>';
+                            table += options[idx]; 
+                            table += '</label>';
                             table +=  '</td><td id=rightColumn></td></tr>';
                         }console.log(previousVals);
                         table+= '</table>';
