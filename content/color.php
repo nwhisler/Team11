@@ -34,6 +34,7 @@
 
                 echo "<head>
                         <meta charset='UTF-8'>
+                        <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js\"></script>
                         <title>Color Coordinate Generation</title>
                         <div id='content'>
                             <nav>
@@ -84,15 +85,16 @@
                                 }
                             }
                             previousVals[idx] = colorOptions[idx];
-                            counter++;
                             table += '<input type=\"radio\" id=\"radio\"';
-                            table +=  idx.toString();
+                            table +=  idx.toString();                          
                             table += ' value = colorOptions[idx]';
                             table += '>';
-                            table += '<label>';
-                            table += options[idx]; 
+                            table += '<label id=';
+                            table += counter.toString();
+                            table += '>';
                             table += '</label>';
                             table +=  '</td><td id=rightColumn></td></tr>';
+                            counter++;
                         }console.log(previousVals);
                         table+= '</table>';
                         document.getElementById('table-container').innerHTML = table;
@@ -247,6 +249,32 @@
                             }
 
                         } 
+
+                        for(let idx = 0; idx < counter; idx++) {
+
+                            var sel = document.getElementById(\"options\" + idx.toString());
+                            var text = sel.options[sel.selectedIndex].text;
+
+                            $(\"#\" + idx.toString()).text(text);
+
+                        }
+
+                        function radioUpdate() {
+
+                            for(let idx = 0; idx < counter; idx++) {
+
+                            var sel = document.getElementById(\"options\" + idx.toString());
+                            var text = sel.options[sel.selectedIndex].text;
+
+                            $(\"#\" + idx.toString()).text(text);    
+                            
+                            }
+
+                        }
+
+                        for(let idx = 0; idx < counter; idx++) {
+                        $(\"#options\" + idx.toString()).click(radioUpdate);
+                        }
 
                     </script>";
 
