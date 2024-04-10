@@ -63,7 +63,9 @@
                         let counter = 0;
                         const previousVals = [];
                         for(let idx = 0; idx < $colors; idx++) {
-                            table += '<tr><td id=leftColumn>';
+                            table += '<tr><td id=leftColumn class=leftColumn'
+                            table += idx.toString();
+                            table += '>';
                             table += '<select id=options';
                             table += counter.toString();
                             table += ' data-counter=' + idx;
@@ -85,9 +87,10 @@
                                 }
                             }
                             previousVals[idx] = colorOptions[idx];
-                            table += '<input type=\"radio\" id=\"radio\"';
+                            table += '<input name=\"radio\" type=\"radio\" id=\"radio\"';
                             table +=  idx.toString();                          
-                            table += ' value = colorOptions[idx]';
+                            table += ' value =';
+                            table += colorOptions[idx];
                             table += '>';
                             table += '<label id=';
                             table += counter.toString();
@@ -122,7 +125,10 @@
 
                             for(let index = 0; index < dimensions; index++) {
 
-                                table1 += '<td>';
+                                table1 += '<td id=';
+                                table1 += idx.toString();
+                                table1 += index.toString();
+                                table1 += '>';
                                 table1 += '<div class=\'cell_content\'></div>';
                                 table1 += '</td>';
 
@@ -275,6 +281,16 @@
                         for(let idx = 0; idx < counter; idx++) {
                         $(\"#options\" + idx.toString()).click(radioUpdate);
                         }
+
+                        var idx = 0;
+                        var index = 0;
+
+                        $(\"#\" + idx.toString() + index.toString()).click(function() {
+                            
+                            var radioColor = $('input[name=\"radio\"]:checked').val();
+                            $(\"#\" + idx.toString() + index.toString()).css(\"background-color\", radioColor);
+                        
+                        });
 
                     </script>";
 
