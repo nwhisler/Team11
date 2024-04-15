@@ -250,7 +250,6 @@
                                 
                             if(!duplicates) {
     
-                                document.getElementById('duplicates').innerHTML = '<p></p>';
                                 previousVals[eventCounter] = event.target.value;
                             }
 
@@ -285,12 +284,20 @@
                         var idx = 0;
                         var index = 0;
 
-                        $(\"#\" + idx.toString() + index.toString()).click(function() {
+                        for(let idx = 0; idx < dimensions; idx++) {
+
+                            for(let index = 0; index < dimensions; index++) {
+
+                                $(\"#\" + idx.toString() + index.toString()).click(function() {
                             
-                            var radioColor = $('input[name=\"radio\"]:checked').val();
-                            $(\"#\" + idx.toString() + index.toString()).css(\"background-color\", radioColor);
-                        
-                        });
+                                    var radioColor = $('input[name=\"radio\"]:checked').val();
+                                    $(\"#\" + idx.toString() + index.toString()).css(\"background-color\", radioColor);
+                                
+                                });                             
+
+                            }
+
+                        }
 
                     </script>";
 
