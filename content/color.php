@@ -87,9 +87,8 @@
                                 }
                             }
                             previousVals[idx] = colorOptions[idx];
-                            table += '<input name=\"radio\" type=\"radio\" id=\"radio\"';
-                            table +=  idx.toString();                          
-                            table += ' value =';
+                            table += '<input name=radio type=radio id=radio' +idx.toString();                         
+                            table += ' value=';
                             table += colorOptions[idx];
                             table += '>';
                             table += '<label id=';
@@ -210,6 +209,7 @@
 
                             let counter = 0;
                             let duplicates = false;
+                            let indexValue = 0;
                             eventCounter = parseInt(event.target.getAttribute('data-counter'), 10);
                            
                             for(let idx = 1; idx < colors; idx++) {
@@ -251,6 +251,14 @@
                             if(!duplicates) {
     
                                 previousVals[eventCounter] = event.target.value;
+
+            
+                            }
+
+                            for(let idx = 0; idx < previousVals.length; idx++) {
+
+                                $('#radio' + idx.toString()).val(previousVals[idx]);
+
                             }
 
                         } 
@@ -303,6 +311,7 @@
                         }
 
                         $('input[name=\"radio\"]').change(function() {
+
                             
                             for(let selected = 0; selected < selectedRowColumn.length; selected++) {
 
