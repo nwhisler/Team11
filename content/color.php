@@ -283,6 +283,7 @@
 
                         var idx = 0;
                         var index = 0;
+                        var selectedRowColumn = []
 
                         for(let idx = 0; idx < dimensions; idx++) {
 
@@ -293,11 +294,24 @@
                                     var radioColor = $('input[name=\"radio\"]:checked').val();
                                     $(\"#\" + idx.toString() + index.toString()).css(\"background-color\", radioColor);
                                 
+                                    selectedRowColumn.push(\"#\" + idx.toString() + index.toString());
+                                
                                 });                             
 
                             }
 
                         }
+
+                        $('input[name=\"radio\"]').change(function() {
+                            
+                            for(let selected = 0; selected < selectedRowColumn.length; selected++) {
+
+                            var radioColor = $('input[name=\"radio\"]:checked').val();
+                            $(selectedRowColumn[selected]).css(\"background-color\", radioColor);
+
+                            }
+
+                        });
 
                     </script>";
 
