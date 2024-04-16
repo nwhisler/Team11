@@ -62,6 +62,7 @@
                         let table = '<table id=table>';
                         let counter = 0;
                         const previousVals = [];
+                        let selectedColors = colorOptions;
                         for(let idx = 0; idx < $colors; idx++) {
                             table += '<tr><td id=leftColumn class=leftColumn'
                             table += idx.toString();
@@ -95,7 +96,8 @@
                             table += counter.toString();
                             table += '>';
                             table += '</label>';
-                            table +=  '</td><td id=rightColumn></td></tr>';
+                            table +=  '</td><td id=rightColumn><div id=' + colorOptions[idx];
+                            table += '></div></td></tr>';
                             counter++;
                         }console.log(previousVals);
                         table+= '</table>';
@@ -205,6 +207,8 @@
 
                         }
 
+                        let previousColors = selectedColors;
+
                         function handleOnChange(colors) {
 
                             let counter = 0;
@@ -259,6 +263,19 @@
 
                                 $('#radio' + idx.toString()).val(previousVals[idx]);
 
+                                    console.log(previousColors[idx]);
+                                    $('#' + previousColors[idx]).attr('id', previousVals[idx]);
+                                    selectedColors = previousVals;
+
+                                
+                            }
+
+                            previousColors = [];
+
+                            for(let idx = 0; idx < selectedColors.length; idx++) {
+
+                                previousColors.push(selectedColors[idx]);
+
                             }
 
                         } 
@@ -291,7 +308,9 @@
 
                         var idx = 0;
                         var index = 0;
-                        var selectedRowColumn = []
+                        var selectedRowColumn = [];
+                        var selectedRowColumnId = [];
+                        var previousColor;
 
                         for(let idx = 0; idx < dimensions; idx++) {
 
@@ -303,6 +322,20 @@
                                     $(\"#\" + idx.toString() + index.toString()).css(\"background-color\", radioColor);
                                 
                                     selectedRowColumn.push(\"#\" + idx.toString() + index.toString());
+                                    selectedRowColumnId.push(alphabet[idx] + index.toString());
+
+                                    for(let colorIdx = 0; colorIdx < colorOptions.length; colorIdx++) {
+
+                                        if(colorOptions[colorIdx] == radioColor) {
+                                            
+                                            document.getElementById(radioColor).innerHTML = selectedRowColumnId.sort();
+                                            previousColor = radioColor;
+
+                                        }
+                                    
+                                    }
+                                    
+
                                 
                                 });                             
 
@@ -310,13 +343,42 @@
 
                         }
 
+
                         $('input[name=\"radio\"]').change(function() {
+
+                            var currentColor;
 
                             
                             for(let selected = 0; selected < selectedRowColumn.length; selected++) {
 
                             var radioColor = $('input[name=\"radio\"]:checked').val();
+                            currentColor = radioColor;
                             $(selectedRowColumn[selected]).css(\"background-color\", radioColor);
+
+                            }
+
+                            for(let idx = 0; idx < colorOptions.length; idx++) {
+
+                                if(colorOptions[idx] == previousColor) {
+
+                                   
+
+                                    document.getElementById(previousColor).innerHTML = '<p></p>';    
+
+                                }
+
+                            }
+
+                            for(let idx = 0; idx < colorOptions.length; idx++) {
+
+                                if(colorOptions[idx] == currentColor) {
+
+                                    console.log(currentColor);
+
+                                    document.getElementById(currentColor).innerHTML = selectedRowColumnId.sort();  
+                                    previousColor = currentColor;  
+
+                                }
 
                             }
 
