@@ -262,10 +262,8 @@
                             for(let idx = 0; idx < previousVals.length; idx++) {
 
                                 $('#radio' + idx.toString()).val(previousVals[idx]);
-
-                                    console.log(previousColors[idx]);
-                                    $('#' + previousColors[idx]).attr('id', previousVals[idx]);
-                                    selectedColors = previousVals;
+                                $('#' + previousColors[idx]).attr('id', previousVals[idx]);
+                                selectedColors = previousVals;
 
                                 
                             }
@@ -277,6 +275,15 @@
                                 previousColors.push(selectedColors[idx]);
 
                             }
+
+                            for(let selected = 0; selected < selectedRowColumn.length; selected++) {
+
+                                var radioColor = $('input[name=\"radio\"]:checked').val();
+                                $(selectedRowColumn[selected]).css(\"background-color\", radioColor);
+    
+                            }
+
+                            
 
                         } 
 
