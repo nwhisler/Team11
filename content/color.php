@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
     <?php
+    
         if((isset($_GET["dimensions"])) && isset($_GET["colors"])) {
 
             $dimensions = $_GET["dimensions"];
@@ -412,6 +413,7 @@
                   </head>
                   <body>
                     <p> Use parameters dimensions with a value between 1-26 and colors with a value between 1-10. </p>
+                    <form method='GET'> Dimensions: <input type='text' name='dimensions'> Colors: <input type='text' name='colors'> <input type='submit' value='Build Table'></form>
                   </body>
                   <footer id=\"colorFooter\">
                     Copyright &#169 Team 11
