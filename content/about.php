@@ -16,7 +16,7 @@
                     <div class='about'>
                         <div class='bio'>
                             <img src='https://github.com/NWhisler/Images/blob/main/Image.jpg?raw=true' alt='img' />
-                            <p>g
+                            <p>
                                 Hello I am Nicholas Whisler a second degree seeking student. 
                                 My first degree was in Physics and the second being attempted is in Computer Science. 
                                 I am a fifth year student and expect to graduate latest in Spring of 2025.
