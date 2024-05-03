@@ -4,19 +4,28 @@
     
         echo   "<head>
                     <meta charset='UTF-8'>
-                <title>About</title>
-                <div class='content'>
-                    <nav>
-                        <li id='navbar'><a href='../index.php'>Home</a></li>
-                        <li id='navbar'><a href='about.php'>About</a></li>
-                        <li id='navbar'><a href='color.php'>Color Coordinate Generation</a></li>
-                    </nav>
+                    <title>About</title>
                 </head>
                 <body>
+                    <header>
+                        <nav>
+                            <li id='navbar'><a href='../index.php'>Home</a></li>
+                             <li id='navbar'><a href='about.php'>About</a></li>
+                             <li id='navbar'><a href='color.php'>Color Coordinate Generation</a></li>
+                        </nav>
+                    </header>
+                <div class='content'>
+                    <div id='aboutPara'>
+                        <h1 id='aboutTitle'>About Us</h1>
+                        <p>Just some CS students out here trying their best to bring you a color pallete that suites you! Learn more about each of us.</p>
+
+                    </div>
+                    
                     <div class='about'>
-                        <div>
                             <div class='bio'>
+                            <div class='bioImgCont'>
                                 <img src='https://github.com/NWhisler/Images/blob/main/Image.jpg?raw=true' alt='img' />
+                            </div id='indivAbout'>
                                 <p>
                                     Hello I am Nicholas Whisler a second degree seeking student. 
                                     My first degree was in Physics and the second being attempted is in Computer Science. 
@@ -33,8 +42,6 @@
                                     next Fall!
                                 </p>
                             </div>
-                        </div>
-                        <div>
                             <div class='bio'>
                             <img src='https://github.com/nwhisler/Team11/assets/111817710/f2318185-25a7-44d5-ac28-f25bdb9c662f' alt='img' />
                                 <p>
@@ -44,20 +51,20 @@
                                 </p>
                             </div>
                             <div class='bio'>
-                            <img src='https://github.com/mendvoza/images/blob/main/Headshot.jpg?raw=true' alt='img' style  = 'object-fit: cover; object-position: center top; width: 300px; height: 300px;' />
-                            <p>
-                            My name is Victor Mendoza and I am a junior undergraduate student enrolled in the Computer Science fully online program. I worked in oil and gas for 8 years before
-                            I started persuing this degree. I currently work for a startup SaaS company working with drone imagery and writing some code when I have time. This class has really
-                            understand more when I am working on the code at work. I like fishing and hanging out with my wife and son on my free time.    
-                            </p>
+                                <img src='https://github.com/mendvoza/images/blob/main/Headshot.jpg?raw=true' alt='img' id='perImg'/>
+                                <p>
+                                    My name is Victor Mendoza and I am a junior undergraduate student enrolled in the Computer Science fully online program. I worked in oil and gas for 8 years before
+                                    I started persuing this degree. I currently work for a startup SaaS company working with drone imagery and writing some code when I have time. I like fishing and hanging out with my wife and son on my free time.    
+                                </p>
                             </div>
-                        </div>
                     </div>
-                </body>
-                <footer>
-                    Copyright &#169 Team 11
-                </footer>
-                </div>";
+                 </div>
+                    <footer id='aboutFooter'>
+                        Copyright &#169 Team 11
+                    </footer>
+                </body>";
+                
+                
     ?>
     <style type="text/css">
         <?php

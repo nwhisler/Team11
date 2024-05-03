@@ -15,97 +15,135 @@ http://www.sussex.ac.uk/tel/resource/tel_website/accessiblecontrast/
 
 */
 
+html, body{
+    height: 100%;
+    overflow: hidden;
+}
 li {
     display: inline;
 }
 
 body {
-    background-color: #d0d3d4;
+    background-image: linear-gradient(#d0d3d4, #003b49);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
 }
 
 footer {
-    background-color: #003b49;
-    color: #d6d2c4;
+    background-color: #00bfb2;
+    color: #000000;
     padding: 10px;
+}
+.content{
+    padding: 5px;
+    max-height: 90%;
 }
 
 nav {
-    background-color: #003b49;
+    background-color: #00bfb2;
+    padding: 10px;
+    color: #000000;
+}
+#navbar{
+    color: #000000;
+}
+#title{
+    text-emphasis: bold;
+    font-family: sans-serif;
+}
+
+li a {
+    text-decoration: none;
+    color: #000000;
     padding: 10px;
 }
 
-a {
+li a:visited {
     text-decoration: none;
-    color: #d6d2c4;
-    padding: 10px;
+    color: #d3273e;
 }
 
-a:visited {
-    text-decoration: none;
-    color: #d6d2c4;
-}
-
-a:hover {
-    color: #ffc845;
+li a:hover {
+    color: #5d3754;
 }
 
 .about {
     display: flex;
-    justify-content: center;
+    flex-direction: row;
+    justify-content: space-evenly;
     align-items: center;
     margin: 20px auto;
+    width: 100%;
+    height: 80%;
+}
+#aboutPara{
+    height: 15%;
+    width: 100%;
+    text-align: center;
+}
+#aboutTitle{
+    text-align: center;
 }
 
 .bio {
-    padding: 10px;
+    background-color: #5d3754;
+    max-width: 20%;
+    height: 95%;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+}
+.bioImgCont{
+    display: flex;
+    flex-direction: column;justify-content: center;
+    width: 100%;
+    height: 25%;
+    align-items: center;
 }
 
 .bio img {
-    width: 300px;
-    height: auto;
+    width: 90%;
     border-radius: 50%;
     margin-bottom: 10px;
-    margin-left: 50px;
+}
+#perImg{
+    border-radius: 50%;
+    max-height: 50%;
 }
 
-
 .bio p {
-    width: 400px;
+    width: 90%;
     font-size: 16px;
 }
 
 content {
-
     padding: 10px;
-
 }
 
 table, tr, td, th{
-
     border: 1px solid;
-
 }
 
 #table {
-
     width: 100%;
     height: 250px;
-
 }
 
 #homeParagraph {
-
-    width: 50%;
+    width: 75%;
     height: 75%;
-
+    text-align: left;
 }
 
 #table1 {
-
     width: 100%;
     height: 350px;
     table-layout: fixed;
-
 }
 
 #table1 td .cell_content{
@@ -113,31 +151,75 @@ table, tr, td, th{
 }
 
 #homeFooter {
+    margin-top: auto;
+}
 
-    margin-top:275px;
-
+#aboutFooter{
+    margin-top: auto;
 }
 
 #colorFooter {
-
-    margin-top:575px; 
-
+    margin-top: auto; 
 }
 
 #companyImage {
-
     margin-top: 10px;
+    width: 100%;
+    height: 10%;
+    text-align: center;
+}
 
+#teamImage{
+    width: 100%;
+    height: 100%;
+}
+
+#teamImgContainer{
+   max-width: 100%;
+   height: 20%;
+   overflow: hidden;
+}
+
+#colorParaContainer{
+    display: flex;
+    justify-content: center;
+
+}
+
+#colorContr{
+    width: 40%;
+    height: 100%;
+}
+#compDesc{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+}
+#bodybtncontainer{
+    margin-top: 10%;
+}
+
+#aboutBtn{
+   background-color: #00bfb2;
+   border-radius: 4px;
+   height: 40px;
+   box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+#colorGenBtn{
+    background-color: #00bfb2;
+    border-radius: 4px;
+    height: 40px;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
 }
 
 #leftColumn {
-
     width: 20%;
-
 }
 
 #rightColumn {
-
     width: 80%;
-
 }
