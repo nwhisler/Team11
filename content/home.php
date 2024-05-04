@@ -11,6 +11,7 @@
                 <li class='navbar'><a href='index.php' class='navbar'>Home</a></li>
                 <li class='navbar'><a href='content/about.php' class='navbar'>About</a></li>
                 <li class='navbar'><a href='content/color.php' class='navbar'>Color Coordinate Generation</a></li>
+                <li id='navbar'><a href='content/database.php'>Color Selector</a></li>
             </nav>
         </header>
         <div class='content'>

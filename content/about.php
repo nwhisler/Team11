@@ -12,6 +12,7 @@
                             <li id='navbar'><a href='../index.php'>Home</a></li>
                              <li id='navbar'><a href='about.php'>About</a></li>
                              <li id='navbar'><a href='color.php'>Color Coordinate Generation</a></li>
+                             <li id='navbar'><a href='database.php'>Color Selector</a></li>
                         </nav>
                     </header>
                 <div class='content'>
