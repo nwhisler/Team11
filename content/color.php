@@ -2,6 +2,8 @@
 <html>
     <?php
     
+        include_once("colors.php");
+    
         if((isset($_GET["dimensions"])) && isset($_GET["colors"])) {
 
             $dimensions = $_GET["dimensions"];
@@ -42,6 +44,7 @@
                                 <li id='navbar'><a href='../index.php'>Home</a></li>
                                 <li id='navbar'><a href='about.php'>About</a></li>
                                 <li id='navbar'><a href='color.php'>Color Coordinate Generation</a></li>
+                                <li id='navbar'><a href='database.php'>Color Selector</a></li>
                             </nav>
                     </head>
                     <body>
@@ -56,53 +59,36 @@
                     </footer>
                     </div>
                     <script> 
-                        let dimensions = $dimensions;
-                        let colors = $colors;
-                        const colorOptions = ['red', 'orange', 'yellow', 'green', 'blue', 'purple', 'grey', 'brown', 'black', 'teal'];
-                        const options = ['Red', 'Orange', 'Yellow', 'Green', 'Blue', 'Purple', 'Grey', 'Brown', 'Black', 'Teal'];
-                        let table = '<table id=table>';
-                        let counter = 0;
-                        const previousVals = [];
-                        let selectedColors = colorOptions;
-                        for(let idx = 0; idx < $colors; idx++) {
-                            table += '<tr><td id=leftColumn class=leftColumn'
-                            table += idx.toString();
-                            table += '>';
-                            table += '<select id=options';
-                            table += counter.toString();
-                            table += ' data-counter=' + idx;
-                            table += ' onChange=handleOnChange($colors)>Select Color';
-                            for(let index = 0; index < options.length; index++) {
-                                if(index == counter) {                                
-                                    table += '<option value=';
-                                    table += colorOptions[index];
-                                    table += ' selected>';
-                                    table += options[index];
-                                    table += '</option>';
-                                }
-                                else {
-                                    table += '<option value=';
-                                    table += colorOptions[index];
-                                    table += '>';
-                                    table += options[index];
-                                    table += '</option>';
-                                }
+                    let dimensions = $dimensions;
+                    let colors = $colors;
+                    const colorOptions = " . json_encode($colorsArray) . ";
+                    let table = '<table id=\"table\">';
+                    let counter = 0;
+                    const previousVals = [];
+                    let selectedColors = colorOptions;
+                    
+                    for (let idx = 0; idx < colorOptions.length; idx++) {
+                        const colorName = colorOptions[idx]['Name'];
+                        table += '<tr><td id=\"leftColumn' + idx + '\">';
+                        table += '<select id=\"options' + counter + '\" data-counter=\"' + idx + '\" onchange=\"handleOnChange(' + colors + ')\">Select Color';
+                        
+                        for (let index = 0; index < colorOptions.length; index++) {
+                            if (index == counter) {
+                                table += '<option value=\"' + colorOptions[index]['hex_value'] + '\" selected>' + colorOptions[index]['Name'] + '</option>';
+                            } else {
+                                table += '<option value=\"' + colorOptions[index]['hex_value'] + '\">' + colorOptions[index]['Name'] + '</option>';
                             }
-                            previousVals[idx] = colorOptions[idx];
-                            table += '<input name=radio type=radio id=radio' +idx.toString();                         
-                            table += ' value=';
-                            table += colorOptions[idx];
-                            table += '>';
-                            table += '<label id=';
-                            table += counter.toString();
-                            table += '>';
-                            table += '</label>';
-                            table +=  '</td><td id=rightColumn><div id=' + colorOptions[idx];
-                            table += '></div></td></tr>';
-                            counter++;
-                        }console.log(previousVals);
-                        table+= '</table>';
-                        document.getElementById('table-container').innerHTML = table;
+                        }
+                        
+                        previousVals[idx] = colorOptions[idx];
+                        table += '<input name=\"radio\" type=\"radio\" id=\"radio' + idx + '\" value=\"' + colorOptions[idx]['hex_value'] + '\">';
+                        table += '<label id=\"' + counter + '\">' + colorName + '</label>';
+                        table += '</td><td id=\"rightColumn\"><div id=\"' + colorOptions[idx]['Name'] + '\"></div></td></tr>';
+                        counter++;
+                    }
+                
+                    table += '</table>';
+                    document.getElementById('table-container').innerHTML = table;
 
                         let alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
                         let table1 = '<table id=table1><tr><th></th>';
@@ -408,6 +394,7 @@
                             <li id='navbar'><a href='../index.php'>Home</a></li>
                             <li id='navbar'><a href='about.php'>About</a></li>
                             <li id='navbar'><a href='color.php'>Color Coordinate Generation</a></li>
+                            <li id='navbar'><a href='database.php'>Color Selector</a></li>
                         </nav>
                     </div>
                   </head>
