@@ -15,18 +15,14 @@
                              <li id='navbar'><a href='database.php'>Color Selector</a></li>
                         </nav>
                     </header>
-                <div class='content'>
-                    <div id='aboutPara'>
-                        <h1 id='aboutTitle'>About Us</h1>
-                        <p>Just some CS students out here trying their best to bring you a color pallete that suites you! Learn more about each of us.</p>
-
-                    </div>
-                    
-                    <div class='about'>
+                    <div class='content'>
+                        <div id='aboutPara'>
+                            <h1 id='aboutTitle'>About Us</h1>
+                            <p>Just some CS students out here trying their best to bring you a color pallete that suites you! Learn more about each of us.</p>
+                        </div>
+                        <div class='about'>
                             <div class='bio'>
-                            <div class='bioImgCont'>
                                 <img src='https://github.com/NWhisler/Images/blob/main/Image.jpg?raw=true' alt='img' />
-                            </div id='indivAbout'>
                                 <p>
                                     Hello I am Nicholas Whisler a second degree seeking student. 
                                     My first degree was in Physics and the second being attempted is in Computer Science. 
@@ -44,7 +40,7 @@
                                 </p>
                             </div>
                             <div class='bio'>
-                            <img src='https://github.com/nwhisler/Team11/assets/111817710/f2318185-25a7-44d5-ac28-f25bdb9c662f' alt='img' />
+                                <img src='https://github.com/nwhisler/Team11/assets/111817710/f2318185-25a7-44d5-ac28-f25bdb9c662f' alt='img' />
                                 <p>
                                     My name is Stephen Klugherz. I am a senior undergraduate student studying Computer Science.
                                     I am in my last semester and hope to graduate May 2024. I am interested in software development and videogame development.
@@ -58,8 +54,8 @@
                                     I started persuing this degree. I currently work for a startup SaaS company working with drone imagery and writing some code when I have time. I like fishing and hanging out with my wife and son on my free time.    
                                 </p>
                             </div>
+                        </div>
                     </div>
-                 </div>
                     <footer id='aboutFooter'>
                         Copyright &#169 Team 11
                     </footer>
