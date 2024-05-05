@@ -37,13 +37,13 @@ $colorsArray = array (
   ),
   7 => 
   array (
-    'Name' => 'Teal',
-    'hex_value' => '#008080',
+    'Name' => 'Black',
+    'hex_value' => '#000000',
   ),
   8 => 
   array (
-    'Name' => 'Light_purple',
-    'hex_value' => '#CBC3E3',
+    'Name' => 'Teal',
+    'hex_value' => '#008080',
   ),
 );
 ?>
