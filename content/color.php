@@ -1,9 +1,7 @@
 <!DOCTYPE html>
 <html>
     <?php
-    
-        include_once("colors.php");
-    
+          include_once("colors.php");
         if((isset($_GET["dimensions"])) && isset($_GET["colors"])) {
 
             $dimensions = $_GET["dimensions"];
@@ -34,6 +32,12 @@
             }
 
             else {
+                $colorOptions = array();
+                $options = array(); 
+                foreach ($colorsArray as $color) {
+                    $colorOptions[] = $color['Name'];
+                    $options[] = $color['hex_value']; 
+                }
 
                 echo "<head>
                         <meta charset='UTF-8'>
@@ -45,7 +49,7 @@
                                 <li id='navbar'><a href='about.php'>About</a></li>
                                 <li id='navbar'><a href='color.php'>Color Coordinate Generation</a></li>
                                 <li id='navbar'><a href='database.php'>Color Selector</a></li>
-                            </nav>
+                                </nav>
                     </head>
                     <body>
                         <div id='table-container'></div>
@@ -59,58 +63,55 @@
                     </footer>
                     </div>
                     <script> 
-                    
-                    let dimensions = $dimensions;
-                    let colors = $colors;
-                    const colorOptions = " . json_encode($colorsArray) . ";
-                    let table = '<table id=\"table\">';
-                    let counter = 0;
-                    const previousVals = [];
-                    let selectedColors = colorOptions;
-                    
-                    for (let idx = 0; idx < colors; idx++) {
-                        const color = colorOptions[idx];
-                        const colorName = color.Name;
-                        const hexValue = color.hex_value;
-                        table += '<tr><td id=\"leftColumn' + idx + '\">';
-                        table += '<select id=\"options' + counter + '\" data-counter=\"' + idx + '\" onchange=\"handleOnChange(' + colors + ')\">Select Color';
-                        
-                        for (let index = 0; index < colorOptions.length; index++) {
-                            if (index == counter) {
-                                table += '<option value=\"' + colorOptions[index].hex_value + '\" selected>' + colorOptions[index].Name + '</option>';
-                            } else {
-                                table += '<option value=\"' + colorOptions[index].hex_value + '\">' + colorOptions[index].Name + '</option>';
+                        let dimensions = $dimensions;
+                        let colors = $colors;
+                        const colorOptions = " . json_encode($colorOptions) . ";
+                        const options = colorOptions;
+                        const hex = " . json_encode($options) . ";
+                        let table = '<table id=table>';
+                        let counter = 0;
+                        const previousVals = [];
+                        let selectedColors = colorOptions;
+                        for(let idx = 0; idx < $colors; idx++) {
+                            table += '<tr><td id=leftColumn class=leftColumn'
+                            table += idx.toString();
+                            table += '>';
+                            table += '<select id=options';
+                            table += counter.toString();
+                            table += ' data-counter=' + idx;
+                            table += ' onChange=handleOnChange($colors)>Select Color';
+                            for(let index = 0; index < options.length; index++) {
+                                if(index == counter) {                                
+                                    table += '<option value=';
+                                    table += colorOptions[index];
+                                    table += ' selected>';
+                                    table += options[index];
+                                    table += '</option>';
+                                }
+                                else {
+                                    table += '<option value=';
+                                    table += colorOptions[index];
+                                    table += '>';
+                                    table += options[index];
+                                    table += '</option>';
+                                }
                             }
-                        }
-                        
-                        
-                        previousVals[idx] = hexValue;
-                        table += '<input name=radio type=radio id=radio' +idx.toString();                         
-                        table += ' value=';
-        
-                        table += hexValue;
-        
-                        table += '>';
-        
-                        table += '<label id=';
-        
-                        table += counter.toString();
-        
-                        table += '>';
-        
-                        table += '</label>';
-        
-                        table +=  '</td><td id=rightColumn><div id=' + hexValue;
-        
-                        table += '></div></td></tr>';
-        
-                        counter++;
-                    }
-                    
-                    table += '</table>';
-                    document.getElementById('table-container').innerHTML = table;
+                            previousVals[idx] = colorOptions[idx];
+                            table += '<input name=radio type=radio id=radio' +idx.toString();                         
+                            table += ' value=';
+                            table += colorOptions[idx];
+                            table += '>';
+                            table += '<label id=';
+                            table += counter.toString();
+                            table += '>';
+                            table += '</label>';
+                            table +=  '</td><td id=rightColumn><div id=' + colorOptions[idx];
+                            table += '></div></td></tr>';
+                            counter++;
+                        }console.log(previousVals);
+                        table+= '</table>';
+                        document.getElementById('table-container').innerHTML = table;
 
-                
                         let alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
                         let table1 = '<table id=table1><tr><th></th>';
 
@@ -216,56 +217,84 @@
                         }
 
                         let previousColors = selectedColors;
+
                         function handleOnChange(colors) {
-                            selectedRowColumn = [];
+
                             let counter = 0;
                             let duplicates = false;
                             let indexValue = 0;
                             eventCounter = parseInt(event.target.getAttribute('data-counter'), 10);
-                        
-                            for (let idx = 1; idx < colors; idx++) {
+                           
+                            for(let idx = 1; idx < colors; idx++) {
+
                                 var sel = document.getElementById(\"options\" + counter.toString());
-                                var text = sel.options[sel.selectedIndex].text;
-                        
-                                for (let index = 0; index < colors; index++) {
-                                    if (index != counter) {
+                                var text= sel.options[sel.selectedIndex].text;
+
+                                for(let index = 0; index < colors; index++) {
+
+                                    if(index != counter) {
+
                                         var sel1 = document.getElementById(\"options\" + index.toString());
-                                        var text1 = sel1.options[sel1.selectedIndex].text;
-                        
-                                        if (text == text1) {
+                                        var text1= sel1.options[sel1.selectedIndex].text;
+
+                                        if(text == text1) {
+
                                             duplicates = true;
                                             break;
+            
                                         }
+
                                     }
+        
                                 }
-                        
-                                if (duplicates) {
+
+                                if(duplicates) {
+
                                     document.getElementById('duplicates').innerHTML = '<p> All values must be different </p>';
-                                    setTimeout(function () { document.getElementById('duplicates').innerHTML = '<p></p>'; }, 4000);
+                                    setTimeout(function(){document.getElementById('duplicates').innerHTML = '<p></p>';}, 4000);
                                     event.target.value = previousVals[eventCounter];
                                     break;
+
                                 }
-                        
+
                                 counter++;
+                                
                             }
-                        
-                            if (!duplicates) {
+                                
+                            if(!duplicates) {
+    
                                 previousVals[eventCounter] = event.target.value;
+
+            
                             }
-                            for (let idx = 0; idx < colorOptions.length; idx++) {
-                                let colorHex = colorOptions[idx].hex_value;
-                                let colorDiv = document.getElementById(colorHex);
-                                if (colorHex !== previousColor) {
-                                    colorDiv.innerHTML = '';
-                                }
-                                if (colorHex === event.target.value) {
-                                    colorDiv.innerHTML = selectedRowColumnId.sort().join(', ');
-                                }
+
+                            for(let idx = 0; idx < previousVals.length; idx++) {
+
+                                $('#radio' + idx.toString()).val(previousVals[idx]);
+                                $('#' + previousColors[idx]).attr('id', previousVals[idx]);
+                                selectedColors = previousVals;
+
+                                
                             }
-                            previousColor = event.target.value;
-                        }
-                        
-                        
+
+                            previousColors = [];
+
+                            for(let idx = 0; idx < selectedColors.length; idx++) {
+
+                                previousColors.push(selectedColors[idx]);
+
+                            }
+
+                            for(let selected = 0; selected < selectedRowColumn.length; selected++) {
+
+                                var radioColor = $('input[name=\"radio\"]:checked').val();
+                                $(selectedRowColumn[selected]).css(\"background-color\", radioColor);
+    
+                            }
+
+                            
+
+                        } 
 
                         for(let idx = 0; idx < counter; idx++) {
 
@@ -283,7 +312,8 @@
                             var sel = document.getElementById(\"options\" + idx.toString());
                             var text = sel.options[sel.selectedIndex].text;
 
-                            $(\"#\" + idx.toString()).text(text);    
+                            $(\"#\" + idx.toString()).text(text);  
+                            console.log('radio string' + text);  
                             
                             }
 
@@ -299,32 +329,37 @@
                         var selectedRowColumnId = [];
                         var previousColor;
 
-                        for (let idx = 0; idx < dimensions; idx++) {
-                            for (let index = 0; index < dimensions; index++) {
-                                $(\"#\" + idx.toString() + index.toString()).click(function () {
+                        for(let idx = 0; idx < dimensions; idx++) {
+
+                            for(let index = 0; index < dimensions; index++) {
+
+                                $(\"#\" + idx.toString() + index.toString()).click(function() {
+                            
                                     var radioColor = $('input[name=\"radio\"]:checked').val();
-                                    $(\"#\" + idx.toString() + index.toString()).css(\"background-color\", radioColor);
+                                    var colorIndex = colorOptions.indexOf(radioColor);
+                                    var hexCode = hex[colorIndex];
+                                    $(\"#\" + idx.toString() + index.toString()).css(\"background-color\", hexCode);
+                                
                                     selectedRowColumn.push(\"#\" + idx.toString() + index.toString());
-                                    selectedRowColumnId = [];
-                                    for (let i = 0; i < selectedRowColumn.length; i++) {
-                                        let cellId = selectedRowColumn[i].replace('#', ''); 
-                                        let rowIndex = alphabet[parseInt(cellId.substring(1))];
-                                        let columnIndex = parseInt(cellId[0]) + 1;
-                                        let label = rowIndex + columnIndex;
-                                        selectedRowColumnId.push(label);
-                                    }
-                                    selectedRowColumnId.sort();
-                                    document.getElementById(radioColor).innerHTML = selectedRowColumnId;
-                                    for (let colorIdx = 0; colorIdx < colorOptions.length; colorIdx++) {
-                                        let colorHex = colorOptions[colorIdx].hex_value;
-                                        if (colorHex !== radioColor) {
-                                            document.getElementById(colorHex).innerHTML = '';
+                                    selectedRowColumnId.push(alphabet[idx] + index.toString());
+                                    for(let colorIdx = 0; colorIdx < colorOptions.length; colorIdx++) {
+
+                                        if(colorOptions[colorIdx] == radioColor) {
+                                            
+                                            document.getElementById(radioColor).innerHTML = selectedRowColumnId.sort();
+                                            previousColor = radioColor;
+
                                         }
+                                    
                                     }
-                                });
+                                    
+
+                                
+                                });                             
+
                             }
+
                         }
-                        
 
 
                         $('input[name=\"radio\"]').change(function() {
@@ -335,8 +370,9 @@
                             for(let selected = 0; selected < selectedRowColumn.length; selected++) {
 
                             var radioColor = $('input[name=\"radio\"]:checked').val();
-                            currentColor = radioColor;
-                            $(selectedRowColumn[selected]).css(\"background-color\", radioColor);
+                            var colorIndex = colorOptions.indexOf(radioColor);
+                             var hexCode = hex[colorIndex];
+                            $(selectedRowColumn[selected]).css(\"background-color\", hexCode);
 
                             }
 
