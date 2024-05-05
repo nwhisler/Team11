@@ -40,5 +40,10 @@ $colorsArray = array (
     'Name' => 'Teal',
     'hex_value' => '#008080',
   ),
+  8 => 
+  array (
+    'Name' => 'Light_purple',
+    'hex_value' => '#CBC3E3',
+  ),
 );
 ?>
