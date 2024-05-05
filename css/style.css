@@ -1,13 +1,13 @@
 /* All color combinations are AAA certified from this site
 http://www.sussex.ac.uk/tel/resource/tel_website/accessiblecontrast/
 
-#d6d2c4-#003b49
+##63121C-#D0D3D4
     
-    8.05:1
+    8.53:1
 
-#FFC845-#003b49
+#d0d3d4-#000000
     
-    7.89:1
+    13.95:1
 
 #d0d3d4-#003b49
 
@@ -17,7 +17,6 @@ http://www.sussex.ac.uk/tel/resource/tel_website/accessiblecontrast/
 
 html, body{
     height: 100%;
-    overflow: hidden;
 }
 li {
     display: inline;
@@ -62,7 +61,7 @@ li a {
 
 li a:visited {
     text-decoration: none;
-    color: #d3273e;
+    color: #63121C;
 }
 
 li a:hover {

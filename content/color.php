@@ -9,25 +9,90 @@
 
             if(($dimensions < 1 || $dimensions > 26) && ($colors < 1 || $colors > 10)) {
 
-                echo "<script>
-                        window.alert('Incorrect dimensions and colors. Choose between 1 and 26 and 1 and 10.');
-                      </script>";                
+                echo "<head>
+                        <meta charset='UTF-8'>
+                        <title>Color Coordinate Generation</title>
+                        <div class='content'>
+                            <nav>
+                                <li id='navbar'><a href='../index.php'>Home</a></li>
+                                <li id='navbar'><a href='about.php'>About</a></li>
+                                <li id='navbar'><a href='color.php'>Color Coordinate Generation</a></li>
+                                <li id='navbar'><a href='database.php'>Color Selector</a></li>
+                            </nav>
+                        </div>
+                    </head>
+                    <body>
+                        <p> Use parameters dimensions with a value between 1-26 and colors with a value between 1-10. </p>
+                        <form method='GET'> Dimensions: <input type='text' name='dimensions'> Colors: <input type='text' name='colors'> <input type='submit' value='Build Table'></form>
+                        <div id='dimensionsColors'></div>
+                    </body>
+                    <footer id=\"colorFooter\">
+                        Copyright &#169 Team 11
+                    </footer>
+                    <script>
+                        document.getElementById('dimensionsColors').innerHTML = '<p> Incorrect dimensions and colors. Choose between 1 and 26 and 1 and 10. </p>';
+                        setTimeout(function(){document.getElementById('dimensionsColors').innerHTML = '<p></p>';}, 4000);                        
+                    </script>";             
 
             }
 
             elseif($dimensions < 1 || $dimensions > 26) {
 
-                echo "<script>
-                        window.alert('Incorrect dimensions. Choose between 1 and 26.');
-                      </script>";
+                
+                echo "<head>
+                        <meta charset='UTF-8'>
+                        <title>Color Coordinate Generation</title>
+                        <div class='content'>
+                            <nav>
+                                <li id='navbar'><a href='../index.php'>Home</a></li>
+                                <li id='navbar'><a href='about.php'>About</a></li>
+                                <li id='navbar'><a href='color.php'>Color Coordinate Generation</a></li>
+                                <li id='navbar'><a href='database.php'>Color Selector</a></li>
+                            </nav>
+                        </div>
+                    </head>
+                    <body>
+                        <p> Use parameters dimensions with a value between 1-26 and colors with a value between 1-10. </p>
+                        <form method='GET'> Dimensions: <input type='text' name='dimensions'> Colors: <input type='text' name='colors'> <input type='submit' value='Build Table'></form>
+                        <div id='dimensions'></div>
+                    </body>
+                    <footer id=\"colorFooter\">
+                        Copyright &#169 Team 11
+                    </footer>
+                    <script>
+                        document.getElementById('dimensions').innerHTML = '<p> Incorrect dimensions. Choose between 1 and 26. </p>';
+                        setTimeout(function(){document.getElementById('dimensions').innerHTML = '<p></p>';}, 4000);                        
+                    </script>";                
             
             }
 
             elseif($colors < 1 || $colors > 10) {
 
-                echo "<script>
-                        window.alert('Incorrect colors. Choose between 1 and 10.');
-                      </script>";
+                
+                echo "<head>
+                        <meta charset='UTF-8'>
+                        <title>Color Coordinate Generation</title>
+                        <div class='content'>
+                            <nav>
+                                <li id='navbar'><a href='../index.php'>Home</a></li>
+                                <li id='navbar'><a href='about.php'>About</a></li>
+                                <li id='navbar'><a href='color.php'>Color Coordinate Generation</a></li>
+                                <li id='navbar'><a href='database.php'>Color Selector</a></li>
+                            </nav>
+                        </div>
+                    </head>
+                    <body>
+                        <p> Use parameters dimensions with a value between 1-26 and colors with a value between 1-10. </p>
+                        <form method='GET'> Dimensions: <input type='text' name='dimensions'> Colors: <input type='text' name='colors'> <input type='submit' value='Build Table'></form>
+                        <div id='colors'></div>
+                    </body>
+                    <footer id=\"colorFooter\">
+                        Copyright &#169 Team 11
+                    </footer>
+                    <script>
+                        document.getElementById('colors').innerHTML = '<p> Incorrect colors. Choose between 1 and 10. </p>';
+                        setTimeout(function(){document.getElementById('colors').innerHTML = '<p></p>';}, 4000);                        
+                    </script>";               
                 
             }
 
