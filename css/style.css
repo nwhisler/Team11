@@ -60,13 +60,13 @@ li a {
     padding: 10px;
 }
 
-li a:visited {
+ li a:visited {
     text-decoration: none;
     color: #d3273e;
 }
 
 li a:hover {
-    color: #5d3754;
+    color: #2D1A28;
 }
 
 .about {
@@ -118,6 +118,7 @@ li a:hover {
 }
 
 .bio p {
+    color:#FFFFFF;
     width: 90%;
     font-size: 16px;
 }
@@ -223,4 +224,32 @@ table, tr, td, th{
 
 #rightColumn {
     width: 80%;
+}
+
+.input-box {
+    padding: 10px;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #5d3754;
+    max-width: 80%;
+    height: 90%;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.input-box form {
+    padding: 5px;
+}
+
+#conf-mes {
+    color: #FFFFFF;
+}
+
+#error-message {
+    color: #FFFFFF;
 }
