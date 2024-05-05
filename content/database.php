@@ -96,7 +96,6 @@ elseif (isset($_POST['confirm_delete'])) {
 
 <!DOCTYPE html>
 <html>
-<link rel="stylesheet" type="text/css" href="../css/style.css">
 <head>
     <meta charset="UTF-8">
     <title>Database</title>
@@ -109,39 +108,15 @@ elseif (isset($_POST['confirm_delete'])) {
             <li><a href='color.php'>Color Coordinate Generation</a></li>
             <li><a href='database.php'>Color Selector</a></li>
         </nav>
+        <div class='input-box'>
+        
+            <form method="post" action="">
+                <input type="text" name="name" placeholder="Color Name" required>
+                <input type="text" name="hex_value" placeholder="Hex Value" required>
+                <button type="submit" name="add_color">Add Color</button>
+            </form>
 
-        <form method="post" action="">
-            <button type="submit" name="reset_table">Reset Table</button>
-        </form>
-
-        <form method="post" action="">
-            <input type="text" name="name" placeholder="Color Name" required>
-            <input type="text" name="hex_value" placeholder="Hex Value" required>
-            <button type="submit" name="add_color">Add Color</button>
-        </form>
-
-        <form method="post" action="">
-            <select name="color_id">
-                <?php
-                foreach ($colorsArray as $key => $color) {
-                    echo "<option value='".($key + 1)."'>".$color['Name']."</option>";
-                }
-                ?>
-            </select>
-            <input type="text" name="name" placeholder="New Name">
-            <input type="text" name="hex_value" placeholder="New Hex Value">
-            <button type="submit" name="edit_color">Edit Color</button>
-        </form>
-
-        <form method="post" action="">
-            <?php if (isset($confirmation)) : ?>
-                <p>Are you sure you want to delete this color</p>
-                <form method="post" action="">
-                    <input type="hidden" name="color_id" value="<?php echo $_POST['color_id']; ?>">
-                    <button type="submit" name="confirm_delete">Confirm</button>
-                    <button type="button" onclick="history.back()">Cancel</button>
-                </form>
-            <?php else: ?>
+            <form method="post" action="">
                 <select name="color_id">
                     <?php
                     foreach ($colorsArray as $key => $color) {
@@ -149,25 +124,61 @@ elseif (isset($_POST['confirm_delete'])) {
                     }
                     ?>
                 </select>
-                <input type="hidden" name="color_name" value="<?php echo $color['Name']; ?>">
-                <button type="submit" name="delete_color">Delete Color</button>
-            <?php endif; ?>
-        </form>
+                <input type="text" name="name" placeholder="New Name">
+                <input type="text" name="hex_value" placeholder="New Hex Value">
+                <button type="submit" name="edit_color">Edit Color</button>
+            </form>
 
-        <?php
-        if (isset($result)) {
-            echo "<p id='error-message'>$result</p>";
-        }
-        ?>
+            <form method="post" action="">
+                <?php if (isset($confirmation)) : ?>
+                    <p id='conf-mes'>Are you sure you want to delete this color</p>
+                    <form method="post" action="">
+                        <input type="hidden" name="color_id" value="<?php echo $_POST['color_id']; ?>">
+                        <button type="submit" name="confirm_delete">Confirm</button>
+                        <button type="button" onclick="history.back()">Cancel</button>
+                    </form>
+                <?php else: ?>
+                    <select name="color_id">
+                        <?php
+                        foreach ($colorsArray as $key => $color) {
+                            echo "<option value='".($key + 1)."'>".$color['Name']."</option>";
+                        }
+                        ?>
+                    </select>
+                    <input type="hidden" name="color_name" value="<?php echo $color['Name']; ?>">
+                    <button type="submit" name="delete_color">Delete Color</button>
+                <?php endif; ?>
+            </form>
 
-        <script>
-            setTimeout(function(){
-                var errorMessage = document.getElementById('error-message');
-                if (errorMessage) {errorMessage.remove();}}, 4000);
-        </script>
+            <form method="post" action="">
+                <button type="submit" name="reset_table">Reset Table</button>
+            </form>
+
+            <div id='errortext'>
+                <?php
+                if (isset($result)) {
+                    echo "<p id='error-message'>$result</p>";
+                }
+                ?>
+
+                <script>
+                    setTimeout(function(){
+                        var errorMessage = document.getElementById('error-message');
+                        if (errorMessage) {errorMessage.remove();}}, 4000);
+                </script>
+            </div>
+        </div>
     </div>
     <footer id="homeFooter">
         Copyright &#169 Team 11
     </footer>
 </body>
+
+    <style type="text/css">
+        <?php
+            $css = file_get_contents("../css/style.css");
+            echo $css;
+        ?>
+    </style>
+
 </html>
