@@ -15,14 +15,11 @@
             </nav>
         </header>
         <div class='content'>
-            <div id="teamImgContainer">
-                <img src="https://images.unsplash.com/photo-1595740041673-6a525c7be994?q=80&w=2835&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="image" id="teamImage"/>
-            </div>
             <div id="companyImage">
                 <h1 id="title">Welcome to Team 11</h1> 
             </div>
             <div id="colorParaContainer">
-                <img src="https://images.unsplash.com/photo-1500043204644-768d20653f32?q=80&w=2370&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="contrastColors" id="colorContr"/>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXWeT--Now_Mkvk4cfi1tcl9A4Hgzm-JEdZg&usqp=CAU\" alt="contrastColors" id="colorContr"/>
                 <div id="compDesc">
                     <p id="homeParagraph">
                         Welcome to Team 11, your go-to destination for all things color-related! We're thrilled to have you here. 
