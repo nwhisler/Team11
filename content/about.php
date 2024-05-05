@@ -48,7 +48,7 @@
                                 </p>
                             </div>
                             <div class='bio'>
-                                <img src='https://github.com/mendvoza/images/blob/main/Headshot.jpg?raw=true' alt='img' id='perImg'/>
+                                <img src='https://github.com/nwhisler/Team11/assets/111817710/80e698cf-57a3-4fb6-83e6-fea61fcf1ac7' alt='img'/>
                                 <p>
                                     My name is Victor Mendoza and I am a junior undergraduate student enrolled in the Computer Science fully online program. I worked in oil and gas for 8 years before
                                     I started persuing this degree. I currently work for a startup SaaS company working with drone imagery and writing some code when I have time. I like fishing and hanging out with my wife and son on my free time.    
