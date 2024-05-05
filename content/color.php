@@ -141,7 +141,7 @@
                             table += '<tr><td id=leftColumn class=leftColumn'
                             table += idx.toString();
                             table += '>';
-                            table += '<select id=options';
+                            table += '<select style= \" background-color: #E6FFFF;border-radius: 4px;height: 40px;box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);\"id=options';
                             table += counter.toString();
                             table += ' data-counter=' + idx;
                             table += ' onChange=handleOnChange($colors)>Select Color';
@@ -162,7 +162,7 @@
                                 }
                             }
                             previousVals[idx] = colorOptions[idx];
-                            table += '<input name=radio type=radio id=radio' +idx.toString();                         
+                            table += '<input style= \" background-color: #E6FFFF;margin-right: 5px; width: 16px; height: 16px; border: 1px solid #ccc;\"name=radio type=radio id=radio' +idx.toString();                         
                             table += ' value=';
                             table += colorOptions[idx];
                             table += '>';
@@ -225,7 +225,7 @@
                             newWin.document.write('<p> Team 11 </p>');
                             newWin.document.write('</header>');
                             newWin.document.write('</div>');
-                            newWin.document.write('<table id=printTable style=\"border: 1px solid;width: 100%;height: 250px;\">');
+                            newWin.document.write('<table id=printTable style=\"border: 1px solid;width: 100%;height: 200px;\">');
 
                             for(let idx = 0; idx < colors; idx++) {
 
@@ -242,7 +242,7 @@
 
                             newWin.document.write('</table>');
                             newWin.document.write('<br>');
-                            newWin.document.write('<table style=\"border: 1px solid;width: 100%;height: 350px; table-layout: fixed;\">');
+                            newWin.document.write('<table style=\"margin: 0 auto;border: 1px solid;width: 30%;height: 30%; table-layout: fixed;\">');
                             newWin.document.write('<tr style=\"border: 1px solid;\">');
                             newWin.document.write('<th style=\"border: 1px solid;\"></th>');
 
