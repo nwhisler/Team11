@@ -88,11 +88,9 @@ li a:hover {
 }
 
 .bio {
-    overflow: hidden;
-    background-color: #5d3754;
-    padding-top: 5px;
+    background-color: #5d3754;;
     max-width: 20%;
-    height: 95%;
+    height: 99%;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
