@@ -7,16 +7,15 @@ function updateColorsFile($colorsArray) {
 
 function initializeColors() {
     $colorsArray = array(
-        array('Name' => 'Red', 'hex_value' => 'ff0000'),
-        array('Name' => 'Orange', 'hex_value' => 'ffa500'),
-        array('Name' => 'Yellow', 'hex_value' => 'ffff00'),
-        array('Name' => 'Green', 'hex_value' => '00ff00'),
-        array('Name' => 'Blue', 'hex_value' => '0000ff'),
-        array('Name' => 'Purple', 'hex_value' => '800080'),
-        array('Name' => 'Grey', 'hex_value' => '808080'),
-        array('Name' => 'Brown', 'hex_value' => 'a52a2a'),
-        array('Name' => 'Black', 'hex_value' => '000000'),
-        array('Name' => 'Teal', 'hex_value' => '008080')
+        array('Name' => 'Red', 'hex_value' => '#ff0000'),
+        array('Name' => 'Yellow', 'hex_value' => '#ffff00'),
+        array('Name' => 'Green', 'hex_value' => '#00ff00'),
+        array('Name' => 'Blue', 'hex_value' => '#0000ff'),
+        array('Name' => 'Purple', 'hex_value' => '#800080'),
+        array('Name' => 'Grey', 'hex_value' => '#808080'),
+        array('Name' => 'Brown', 'hex_value' => '#a52a2a'),
+        array('Name' => 'Black', 'hex_value' => '#000000'),
+        array('Name' => 'Teal', 'hex_value' => '#008080')
     );
     updateColorsFile($colorsArray);
 }
@@ -29,7 +28,13 @@ include_once("colors.php");
 
 function addColor($name, $hex_value) {
     global $colorsArray;
+    // Replace spaces with underscores in the color name
+    $name = str_replace(' ', '_', $name);
     $name = strtolower($name);
+    if (strpos($hex_value, '#') !== 0) {
+        $hex_value = '#' . $hex_value;
+    }
+
     foreach ($colorsArray as $color) {
         if (strtolower($color['Name']) == $name || $color['hex_value'] == $hex_value) {
             return "Color already exists";
@@ -43,6 +48,8 @@ function addColor($name, $hex_value) {
 
 function editColor($id, $name, $hex_value) {
     global $colorsArray;
+    // Replace spaces with underscores in the color name
+    $name = str_replace(' ', '_', $name);
     $name = strtolower($name);
     if (isset($colorsArray[$id - 1])) {
         foreach ($colorsArray as $color) {
@@ -128,7 +135,7 @@ elseif (isset($_POST['confirm_delete'])) {
 
         <form method="post" action="">
             <?php if (isset($confirmation)) : ?>
-                <p>Are you sure you want to delete <?php echo $confirmation; ?>?</p>
+                <p>Are you sure you want to delete this color</p>
                 <form method="post" action="">
                     <input type="hidden" name="color_id" value="<?php echo $_POST['color_id']; ?>">
                     <button type="submit" name="confirm_delete">Confirm</button>
