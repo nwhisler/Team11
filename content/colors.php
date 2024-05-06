@@ -22,30 +22,25 @@ $colorsArray = array (
   ),
   4 => 
   array (
-    'Name' => 'Blue',
-    'hex_value' => '#0000ff',
-  ),
-  5 => 
-  array (
     'Name' => 'Purple',
     'hex_value' => '#800080',
   ),
-  6 => 
+  5 => 
   array (
     'Name' => 'Grey',
     'hex_value' => '#808080',
   ),
-  7 => 
+  6 => 
   array (
     'Name' => 'Brown',
     'hex_value' => '#a52a2a',
   ),
-  8 => 
+  7 => 
   array (
     'Name' => 'Black',
     'hex_value' => '#000000',
   ),
-  9 => 
+  8 => 
   array (
     'Name' => 'Teal',
     'hex_value' => '#008080',
