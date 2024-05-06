@@ -409,7 +409,7 @@
                                     $(\"#\" + idx.toString() + index.toString()).css(\"background-color\", hexCode);
                                 
                                     selectedRowColumn.push(\"#\" + idx.toString() + index.toString());
-                                    selectedRowColumnId.push(alphabet[idx] + index.toString());
+                                    selectedRowColumnId.push(alphabet[index] + (idx +1).toString());
                                     for(let colorIdx = 0; colorIdx < colorOptions.length; colorIdx++) {
 
                                         if(colorOptions[colorIdx] == radioColor) {
