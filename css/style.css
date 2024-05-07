@@ -26,7 +26,7 @@ body {
     background-image: linear-gradient(#d0d3d4, #003b49);
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
+    min-height: 100%; 
     margin: 0;
 }
 
@@ -277,9 +277,19 @@ form button[type="submit"] {
     height: 40px;
     box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
 }
+form button[type="button"] {
+    background-color: #E6FFFF;
+    border-radius: 4px;
+    height: 40px;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
+}
 form button[type="submit"]:hover {
     background-color: #DDCCFF;
 }
+form button[type="button"]:hover {
+    background-color: #DDCCFF;
+}
+
 
 
 

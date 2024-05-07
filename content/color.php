@@ -116,12 +116,12 @@
                                 <li id='navbar'><a href='database.php'>Color Selector</a></li>
                                 </nav>
                     </head>
-                    <body>
+                    <body >
                         <div id='table-container'></div>
                         <br>
                         <div id='duplicates'></div>
                         <div id='table-container1'></div>
-                        <input type='button' value='Print' onClick='printContent($colors, $dimensions)'>
+                        <input type='button' style= \" background-color: #E6FFFF;border-radius: 4px;box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);\" value='Print' onClick='printContent($colors, $dimensions)'>
                     </body>
                     <footer>
                         Copyright &#169 Team 11
@@ -141,7 +141,7 @@
                             table += '<tr><td id=leftColumn class=leftColumn'
                             table += idx.toString();
                             table += '>';
-                            table += '<select style= \" background-color: #E6FFFF;border-radius: 4px;height: 40px;box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);\"id=options';
+                            table += '<select style= \" background-color: #E6FFFF;border-radius: 4px;box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);\"id=options';
                             table += counter.toString();
                             table += ' data-counter=' + idx;
                             table += ' onChange=handleOnChange($colors)>Select Color';
@@ -235,7 +235,9 @@
                                 newWin.document.write('<tr style=\"border: 1px solid;\">');
                                 newWin.document.write('<td style=\"border: 1px solid; width: 20%;\">');
                                 newWin.document.write(text);
-                                newWin.document.write('</td><td style=\"border: 1px solid; width: 80%;\"></td></tr>');
+                                newWin.document.write('</td><td style=\"border: 1px solid; width: 80%;\">');
+                                newWin.document.write(document.getElementById(text).innerHTML);
+                                newWin.document.write('</td></tr>');
 
 
                             }
@@ -349,6 +351,7 @@
                                 previousColors.push(selectedColors[idx]);
 
                             }
+                            
 
                             for(let selected = 0; selected < selectedRowColumn.length; selected++) {
 
@@ -406,13 +409,14 @@
                                     $(\"#\" + idx.toString() + index.toString()).css(\"background-color\", hexCode);
                                 
                                     selectedRowColumn.push(\"#\" + idx.toString() + index.toString());
-                                    selectedRowColumnId.push(alphabet[idx] + index.toString());
+                                    selectedRowColumnId.push(alphabet[index] + (idx +1).toString());
                                     for(let colorIdx = 0; colorIdx < colorOptions.length; colorIdx++) {
 
                                         if(colorOptions[colorIdx] == radioColor) {
-                                            
-                                            document.getElementById(radioColor).innerHTML = selectedRowColumnId.sort();
+                                            const uniqueCoordinates = Array.from(new Set(selectedRowColumnId));
+                                            document.getElementById(radioColor).innerHTML = uniqueCoordinates.sort().join(', ');
                                             previousColor = radioColor;
+                                            
 
                                         }
                                     
@@ -428,45 +432,26 @@
 
 
                         $('input[name=\"radio\"]').change(function() {
-
-                            var currentColor;
-
+                            var currentColor = $(this).val();
                             
-                            for(let selected = 0; selected < selectedRowColumn.length; selected++) {
-
-                            var radioColor = $('input[name=\"radio\"]:checked').val();
-                            var colorIndex = colorOptions.indexOf(radioColor);
-                             var hexCode = hex[colorIndex];
-                            $(selectedRowColumn[selected]).css(\"background-color\", hexCode);
-
+                            if (previousColor) {
+                                document.getElementById(previousColor).innerHTML = '';
                             }
-
-                            for(let idx = 0; idx < colorOptions.length; idx++) {
-
-                                if(colorOptions[idx] == previousColor) {
-
-                                   
-
-                                    document.getElementById(previousColor).innerHTML = '<p></p>';    
-
-                                }
-
+                            
+                            const currentColorId = currentColor.replace('#', '');
+                            
+                            const uniqueCoordinates = Array.from(new Set(selectedRowColumnId));
+                            document.getElementById(currentColorId).innerHTML = uniqueCoordinates.sort().join(', ');
+                            
+                            for (let selected = 0; selected < selectedRowColumn.length; selected++) {
+                                var colorIndex = colorOptions.indexOf(currentColor);
+                                var hexCode = hex[colorIndex];
+                                $(selectedRowColumn[selected]).css(\"background-color\", hexCode);
                             }
-
-                            for(let idx = 0; idx < colorOptions.length; idx++) {
-
-                                if(colorOptions[idx] == currentColor) {
-
-                                    console.log(currentColor);
-
-                                    document.getElementById(currentColor).innerHTML = selectedRowColumnId.sort();  
-                                    previousColor = currentColor;  
-
-                                }
-
-                            }
-
+                            
+                            previousColor = currentColor;
                         });
+                        
 
                     </script>";
 

@@ -8,6 +8,7 @@ function updateColorsFile($colorsArray) {
 function initializeColors() {
     $colorsArray = array(
         array('Name' => 'Red', 'hex_value' => '#ff0000'),
+        array('Name' => 'Orange', 'hex_value' => '#FFA500'),
         array('Name' => 'Yellow', 'hex_value' => '#ffff00'),
         array('Name' => 'Green', 'hex_value' => '#00ff00'),
         array('Name' => 'Blue', 'hex_value' => '#0000ff'),
